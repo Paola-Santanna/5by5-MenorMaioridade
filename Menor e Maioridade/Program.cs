@@ -1,14 +1,8 @@
-﻿//Faça um programa que receba a idade de 10 pessoas e mostre a quantidade de maiores e menores de idade;
+﻿Console.WriteLine("--- Menor e Maioridade ---");
 
-//Início do programa
-
-using System.ComponentModel.Design;
-
-Console.WriteLine("--- Menor e Maioridade ---");
-
-//Declaração de variáveis
 int idade, idade_aux, menor_idade = 0, maior_idade = 0;
 
+//Entrada dos dados e operações
 for (int i = 1; i <= 10; i++)
 {
     do
