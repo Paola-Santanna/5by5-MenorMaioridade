@@ -4,35 +4,34 @@
 
 using System.ComponentModel.Design;
 
-Console.WriteLine("--- Menor e Maioridade ---\n");
+Console.WriteLine("--- Menor e Maioridade ---");
 
 //Declaração de variáveis
 int idade, idade_aux, menor_idade = 0, maior_idade = 0;
 
-//Entrada de dados
 for (int i = 1; i <= 10; i++)
 {
     do
     {
-        Console.WriteLine("Digite a sua idade");
-        Console.Write($"{i}ª pessoa: ");
-        idade = int.Parse(Console.ReadLine());
-        idade_aux = idade;
-
-        if (idade_aux < 0)
-            Console.WriteLine("\nNúmero Inválido\n");
-        else
+        Console.WriteLine("\nDigite a sua idade");
+        do
         {
-            if (idade_aux > 100)
-                Console.WriteLine("\nNúmero Inválido\n");
-            else
+            Console.Write($"{i}ª pessoa: ");
+            idade = int.Parse(Console.ReadLine());
+            idade_aux = idade;
+
+            if (idade_aux < 0 || idade_aux > 100)
             {
-                if (idade < 18)
-                    menor_idade += 1;
-                else
-                    maior_idade += 1;
+                Console.WriteLine("\nNúmero Inválido");
+                Console.WriteLine("\nDigite Novamente");
             }
-        }
+
+        } while (idade_aux < 0 || idade_aux > 100);
+
+        if (idade_aux < 18)
+            menor_idade += 1;
+        else
+            maior_idade += 1;
 
     } while (idade_aux < 0 && idade_aux > 100);
 }
